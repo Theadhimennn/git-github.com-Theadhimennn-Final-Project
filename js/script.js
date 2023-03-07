@@ -21,6 +21,10 @@ var swiper = new Swiper(".trending-content", {
           el: ".swiper-pagination",
           clickable: true,
         },
+        autoplay:{
+          delay: 2500,
+          disableOnInteraction: false,
+        },
         breakpoints: {
           "@0.00": {
             slidesPerView: 2,
@@ -35,4 +39,17 @@ var swiper = new Swiper(".trending-content", {
             spaceBetween: 20,
           },
         },
+        
       });
+
+
+      // scrollbar
+
+window.onscroll = function() {mufunction()};
+
+function mufunction() {
+  var WinScroll = document.body.scrollTop || document.documentElement.scrollTop;
+  var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  var scrolled = (WinScroll / height) * 100
+  document.getElementById('#scroll-bar').style.width = scrolled + '%';
+}
